@@ -1,0 +1,93 @@
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mes Avis Lecture</title>
+
+  <!-- Polices Google + Adobe en premier -->
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel&family=Open+Sans&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&family=Crimson+Pro&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://use.typekit.net/kjd6pud.css" />
+
+  <!-- Ton CSS local -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <aside class="sidebar">
+    <div class="logo">📚</div>
+    <button class="nav-btn" title="Accueil">🏠</button>
+    <button class="nav-btn" title="Favoris">❤️</button>
+    <button class="nav-btn" title="Paramètres">⚙️</button>
+    <button class="nav-btn contact-btn" title="contact">✉️
+  </aside>
+
+  <main>
+    <section class="featured">
+      <div class="featured-text">
+        <h1>Spark of the Everflame</h1>
+       <p class="meta">Penn Cole 
+        <br>
+         <br>
+        <span class="book-info">| 3 tomes | 368 pages</span></p>
+
+    </p>
+        <p class="desc">
+  Dans un monde colonisé par les dieux et gouverné par les Descendants, leur cruelle progéniture, Diem Bellator aimerait échapper à son misérable quotidien. La disparition soudaine de sa mère l'oblige à entrer dans l'univers sombre des Descendants afin de percer les mystères qu'Auralie a laissés derrière elle. Contrainte de participer à la guerre civile qui s'intensifie, Diem devra naviguer entre les règles du pouvoir, de la politique et de l'amour pour sauver sa famille… 
+</p>
+
+        <div class="btn-group">
+          <button class="primary" onclick="window.location.href='reviewSOTE.html'">Lire la review</button>
+          <button class="secondary" onclick="addToFavorites(0)">Ajouter aux favoris</button>
+        </div>
+      </div>
+      <img src="images/sparkoftheeverflame.jpg" alt="Spark of the Everflame" class="featured-cover" />
+    </section>
+
+    <section class="similar">
+      <h2>Plus de livres similaires</h2>
+      <div class="carousel" id="carousel"></div>
+    </section>
+
+     <div class="modal" id="modal">
+    <div class="modal-content">
+      <button class="close-btn" onclick="closeModal()">✕</button>
+      <h2 id="modalTitle"></h2>
+      <p id="modalContent"></p>
+    </div>
+  </div>
+
+  <section class="latest-reviews">
+   <h2>Les derniers avis</h2>
+  <p class="reviews-intro">Découvrez ce que nos lecteurs pensent des livres récemment publiés.</p>
+  <div id="reviews-list">
+    <!-- Les avis seront injectés ici par JS -->
+  </div>
+</section>
+
+  </main>
+
+  <!-- Fomulaire de contact-->
+ <div class="modal contact-modal" role="dialog" aria-modal="true" aria-labelledby="contactTitle" aria-hidden="true">
+  <div class="modal-content">
+    <button class="close-btn" aria-label="Fermer la fenêtre">×</button>
+    <h2 id="contactTitle">Contactez-nous</h2>
+    <form class="contact-form" action="#" method="post">
+      <label for="contact-name">Nom</label>
+      <input type="text" id="contact-name" name="name" required />
+
+      <label for="contact-email">Email</label>
+      <input type="email" id="contact-email" name="email" required />
+
+      <label for="contact-message">Message</label>
+      <textarea id="contact-message" name="message" rows="5" required></textarea>
+
+      <button type="submit" class="primary">Envoyer</button>
+    </form>
+  </div>
+</div>
+
+
+  <script src="script.js"></script>
+</body>
+</html>

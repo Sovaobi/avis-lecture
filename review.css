@@ -1,0 +1,516 @@
+/* ========== REVIEW PAGE ONLY ========== */
+
+#reviewPage main {
+  margin-left: 60px;
+  padding: 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 3rem;
+  min-height: 100vh;
+  flex-wrap: wrap; /* Ajouté pour permettre le retour à la ligne */
+}
+
+#reviewPage main img {
+  height: 100vh;
+  width: auto;
+  max-width: none;
+  border-radius: 8px;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 15%);
+  position: sticky;
+  top: 0;
+  object-fit: cover;
+  flex-shrink: 0;
+  margin: 0;
+  display: block;
+}
+
+#reviewPage .review-text {
+  flex: 1;
+  font-size: 1.125rem;
+  line-height: 1.6;
+  text-align: left;
+}
+
+#reviewPage h1 {
+  color: #d7ccb5;
+}
+
+#reviewPage h2 {
+  color: #f3ead7;
+  font-family: 'Bebas Neue', cursive, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+
+#reviewPage .author {
+  font-style: italic;
+  color: #464357;
+  margin-bottom: 2rem;
+  font-size: 1.2rem;
+  font-family: 'angie-sans', sans-serif;
+}
+
+#reviewPage .back-btn {
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: #d7ccb5;
+  cursor: pointer;
+  padding: 0;
+  margin-bottom: 1rem;
+  user-select: none;
+  position: fixed;
+  top: 20px;
+  left: 90px;
+  z-index: 1000;
+}
+
+#reviewPage {
+  padding-top: 0 !important;
+  margin-top: 0 !important;
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 850px) {
+  #reviewPage main {
+    flex-direction: column;
+    padding: 1rem 2rem;
+  }
+
+  #reviewPage main img {
+    margin: 0;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    width: auto;
+    max-width: none;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 15%);
+    object-fit: cover;
+    flex-shrink: 0;
+    display: block;
+  }
+
+  #reviewPage .summary-section,
+  #reviewPage .opinion-section {
+    margin-top: 2rem;
+    padding-left: 1rem;
+    max-width: 600px;
+  }
+}
+
+/* ========== OTHER VOLUMES SECTION ========== */
+#reviewPage .other-volumes {
+  width: 100%;
+  margin-top: 0rem;
+  padding-left: 60px; /* Ajouté pour l'alignement à gauche */
+  display: block;
+  box-sizing: border-box;
+  order: 99;
+}
+
+
+#reviewPage .other-volumes h2 {
+  margin-left: 0;
+  padding-left: 0;
+  font-family: 'Bebas Neue', cursive, sans-serif;
+  color: #888;
+}
+
+#reviewPage .volumes-list {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  overflow-x: auto;
+}
+
+#reviewPage .volume {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  margin-bottom: 0;
+  opacity: 1;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
+}
+
+#reviewPage .volume img {
+  width: 200px;
+  height: auto;
+  border-radius: 2px;
+  box-shadow: 20 0 0px #0e0e0c;
+  filter: brightness(1.1) saturate(1.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+}
+
+#reviewPage .volume:hover img {
+  transform: scale(1.05);
+  filter: brightness(1.2) saturate(1.3);
+}
+
+#reviewPage .volume-title {
+  margin-top: 0.5rem;
+  font-family: 'Bebas Neue', cursive, sans-serif;
+  color: #d7ccb5;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+
+
+/* ========== RESPONSIVE DESIGN ========== */
+
+@media (max-width: 1024px) {
+  .featured {
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    padding: 1.5rem;
+    gap: 2rem;
+  }
+
+  .featured-text {
+    max-width: 100%;
+    text-align: center;
+    align-items: center;
+  }
+
+  .featured h1 {
+    font-size: 2.2rem;
+  }
+
+  .featured-cover {
+    width: 70%;
+    margin: 0;
+    box-shadow: 0 0 12px rgba(10, 10, 10, 0.7);
+  }
+
+  .btn-group {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .carousel {
+    padding-left: 1rem;
+    gap: 1.2rem;
+  }
+
+  .thumb {
+    width: 110px;
+    height: 165px;
+  }
+
+  .similar h2,
+  .latest-reviews h2,
+  .reviews-intro {
+    padding-left: 0;
+    text-align: center;
+  }
+
+  .latest-reviews {
+    padding: 1.5rem;
+  }
+
+  .sidebar {
+    width: 100%;
+    height: auto;
+    flex-direction: row;
+    justify-content: space-around;
+    position: relative;
+    padding: 1rem 0;
+  }
+
+  .logo {
+    font-size: 1.5rem;
+  }
+
+  .nav-btn {
+    margin: 0.5rem;
+    font-size: 1rem;
+  }
+
+  main {
+    margin-left: 0;
+    padding: 2rem 1.5rem;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .featured h1 {
+    font-size: 1.8rem;
+  }
+
+  .primary, .secondary {
+    font-size: 1rem;
+    padding: 0.6rem 1.2rem;
+  }
+
+  .modal-content {
+    padding: 1.5rem;
+  }
+
+  .modal-content h2 {
+    font-size: 1.5rem;
+  }
+
+  .thumb {
+    width: 100px;
+    height: 150px;
+  }
+
+  .carousel {
+    gap: 1rem;
+  }
+
+  .review .content {
+    font-size: 0.95rem;
+  }
+
+  #reviewPage main {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  #reviewPage main img {
+    width: 100%;
+    height: auto;
+    position: static;
+  }
+
+  #reviewPage .back-btn {
+    left: 1rem;
+    top: 1rem;
+  }
+
+  #reviewPage .summary-section,
+  #reviewPage .opinion-section {
+    padding: 0;
+    margin-top: 1.5rem;
+    width: 100%;
+  }
+
+  #reviewPage .other-volumes {
+    align-items: center;
+    padding-left: 0;
+  }
+
+  #reviewPage .volumes-list {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  #reviewPage .volume img {
+    width: 120px;
+  }
+
+  #reviewPage .volume-title {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .featured h1 {
+    font-size: 1.5rem;
+  }
+
+  .reviews-intro,
+  .featured .desc,
+  .modal-content p {
+    font-size: 0.95rem;
+  }
+
+  .primary, .secondary {
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+  }
+
+  .carousel {
+    padding-left: 0.5rem;
+  }
+
+  .thumb {
+    width: 90px;
+    height: 135px;
+  }
+
+  .review .content {
+    font-size: 0.9rem;
+  }
+
+  .latest-reviews {
+    padding: 1rem;
+  }
+
+  .modal-content {
+    padding: 1rem;
+  }
+
+  .modal-content h2 {
+    font-size: 1.3rem;
+  }
+}
+
+/* Initial state - invisible and slightly shifted down */
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  will-change: opacity, transform;
+}
+
+/* Visible state - fully visible and at normal position */
+.fade-in-section.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Bouton contact dans sidebar */
+.contact-btn {
+  font-size: 1.6rem;
+  color: #d4af37;
+  margin-top: auto; /* pousse le bouton tout en bas */
+  margin-bottom: 1rem;
+}
+
+.contact-btn:hover {
+  color: #d7ccb5;
+  text-shadow: 0 0 8px #d7ccb5;
+}
+
+/* Modal Contact (reprend styles modals) */
+.contact-modal {
+  display: none; /* caché par défaut */
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background: rgba(13, 17, 23, 0.95); /* même couleur que bg home, avec un peu d’opacité */
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+.contact-modal.show {
+  display: flex;
+}
+
+.contact-modal .modal-content {
+  background: #0d1117; /* même que la home */
+  padding: 2rem;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 600px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.8); /* ombre portée douce */
+  color: #d7ccb5;
+  font-family: 'Cinzel', serif;
+  position: relative;
+}
+
+.contact-modal h2 {
+  margin-top: 0;
+  color: #d7ccb5;
+  text-shadow: 0 0 10px #d7ccb5;
+  font-family: 'angie-sans', sans-serif;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.contact-form label {
+  font-weight: 600;
+  color: #d7ccb5;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 0.75rem 1rem;
+  border: none;
+  border-radius: 6px;
+  background: #2c313a;
+  color: #d7ccb5;
+  font-size: 1rem;
+  resize: vertical;
+  transition: box-shadow 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  box-shadow: 0 0 8px #f3f0e7;
+}
+
+.contact-btn {
+  background-color: #2b2b3d;
+  color: #f5f0e6;
+}
+
+.contact-btn:hover {
+background-color: #f3f0e7;
+  color: #888;
+  }
+
+.contact-form button.secondary:hover {
+  background: #d7ccb5;
+  color: #888;
+}
+
+/* section commentaires */
+
+#reviewPage .comments-section {
+  flex-basis: 90%;  /* Prend toute la largeur et force passage à la ligne */
+  order: 99;         /* Met la section en dernier dans l’ordre flex */
+  margin-top: 2%;
+  max-width: 100%;   
+}
+
+
+#reviewPage .comments-section h2 {
+  font-family: 'Bebas Neue', cursive, sans-serif;
+  color: #888;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+#reviewPage .comment-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+#reviewPage .comment-form input,
+#reviewPage .comment-form textarea {
+  padding: 0.5rem;
+  font-size: 1rem;
+  font-family: inherit;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background: #fdfdfd;
+  resize: vertical; /* Permet de redimensionner verticalement le textarea */
+}
+
+#reviewPage .comment-form button {
+  align-self: flex-start;
+  padding: 0.5rem 1rem;
+  font-family: inherit;
+  font-size: 1rem;
+  border: none;
+  border-radius: 6px;
+  background-color: #d7ccb5;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#reviewPage .comment-form button:hover {
+  background-color: #c0b69c;
+}
