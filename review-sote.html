@@ -6,16 +6,15 @@
   <title>Critique - Spark of the everflame</title>
   <link rel="stylesheet" href="https://use.typekit.net/kjd6pud.css" />
   <link rel="stylesheet" href="styles.css" />
-<link rel="stylesheet" href="review.css" />
-
+  <link rel="stylesheet" href="review.css" />
 </head>
-<body>
 
+<body>
   <!-- Barre latérale -->
   <nav class="sidebar">
     <div class="logo">📚</div>
-    <button class="nav-btn" title="Accueil">🏠</button>
-    <button class="nav-btn" title="Favoris">❤️</button>
+    <button class="nav-btn" title="Accueil" onclick="window.location.href='index.html'">🏠</button>
+    <button class="nav-btn" title="Favoris" id="btnFavoris">❤️</button>
     <button class="nav-btn" title="Paramètres">⚙️</button>
     <button class="nav-btn contact-btn" aria-label="Contact" title="contact">✉️</button>
   </nav>
@@ -25,8 +24,8 @@
 
   <!-- Contenu principal -->
   <main>
-    <!-- 🔔 ta grande image -->
-    <img src="Images/reviewSOTE.Png" alt="Spark of the everflame - critique" />
+    <!-- Image principale -->
+    <img src="Images/reviewSOTE.png" alt="Spark of the everflame - critique" id="mainCover" />
 
     <div class="review-text">
       <h1>Spark of the everflame</h1>
@@ -46,8 +45,8 @@
         </p>
       </section>
 
-      <button class="primary" onclick="window.location.href='reviewSOTE.html'">Ajouter aux favoris</button>
-    </div> <!-- /.review-text -->
+      <button class="primary" id="btnAddFavoris">Ajouter aux favoris</button>
+    </div>
 
     <!-- Section autres volumes -->
     <section class="other-volumes">
@@ -77,11 +76,10 @@
         <button type="submit" class="secondary">Publier</button>
       </form>
     </section>
-
   </main>
 
   <!-- Formulaire de contact -->
-  <div class="modal contact-modal" role="dialog" aria-modal="true" aria-labelledby="contactTitle" aria-hidden="true">
+    <div class="modal contact-modal" role="dialog" aria-modal="true" aria-labelledby="contactTitle">
     <div class="modal-content">
       <button class="close-btn" aria-label="Fermer la fenêtre">×</button>
       <h2 id="contactTitle">Contactez-nous</h2>
@@ -99,6 +97,51 @@
       </form>
     </div>
   </div>
+
+  <!-- Script favoris amélioré -->
+  <script>
+    function addToFavorites() {
+      const coverImg = document.getElementById('mainCover');
+      const title = document.querySelector('.review-text h1')?.textContent.trim();
+      const author = document.querySelector('.author')?.textContent.trim();
+      const url = window.location.pathname;
+
+      if (!coverImg || !title || !author) {
+        alert("Données du livre incomplètes.");
+        return;
+      }
+
+      const book = {
+        title,
+        author,
+        cover: coverImg.getAttribute('src'),
+        url
+      };
+
+      let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+
+      if (favorites.some(fav => fav.title === book.title)) {
+        alert("Ce livre est déjà dans vos favoris.");
+        return;
+      }
+
+      favorites.push(book);
+      localStorage.setItem('favorites', JSON.stringify(favorites));
+      alert("Livre ajouté aux favoris !");
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const btnAdd = document.getElementById('btnAddFavoris');
+      if (btnAdd) {
+        btnAdd.addEventListener('click', addToFavorites);
+      }
+
+      const btnFavorisSidebar = document.getElementById('btnFavoris');
+      btnFavorisSidebar.addEventListener('click', () => {
+        window.location.href = 'favoris.html';
+      });
+    });
+  </script>
 
   <script src="script.js"></script>
 </body>

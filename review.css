@@ -470,6 +470,7 @@ background-color: #f3f0e7;
   flex-basis: 90%;  /* Prend toute la largeur et force passage à la ligne */
   order: 99;         /* Met la section en dernier dans l’ordre flex */
   margin-top: 2%;
+  padding-left: 5%; 
   max-width: 100%;   
 }
 
@@ -513,4 +514,11 @@ background-color: #f3f0e7;
 
 #reviewPage .comment-form button:hover {
   background-color: #c0b69c;
+}
+.contact-modal {
+  display: none;
+  /* ou visibility: hidden, ou opacity: 0, etc. */
+}
+.contact-modal.open {
+  display: block;
 }

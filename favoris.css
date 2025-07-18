@@ -1,0 +1,159 @@
+
+
+/* Conteneur principal (page) */
+#favorisPage {
+  margin-left: 60px;
+  padding: 0;
+  min-height: 100vh;
+  background-color: #12121e;
+  color: #d7ccb5;
+  font-family: 'Open Sans', sans-serif;
+}
+
+/* Titre principal */
+#favorisPage h1 {
+  font-family: 'Bebas Neue', cursive, sans-serif;
+  font-size: 3rem;
+  margin: 2rem 0;
+  color: #d7ccb5;
+  text-align: center;
+}
+
+/* Barre de navigation */
+.main-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  padding-left: 0;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.main-nav a {
+  text-decoration: none;
+  color: #d7ccb5;
+  font-weight: 600;
+  font-family: 'Cinzel', serif;
+  transition: color 0.3s ease;
+}
+
+.main-nav a.active,
+.main-nav a:hover {
+  color: #f3ead7;
+}
+
+/* Flèche retour */
+.back-arrow {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  font-size: 1.8rem;
+  color: #d7ccb5;
+  text-decoration: none;
+  user-select: none;
+  z-index: 1000;
+  transition: color 0.3s ease;
+}
+
+.back-arrow:hover {
+  color: #f3ead7;
+}
+
+/* Grille responsive des favoris */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto 3rem auto;
+  padding: 0 1rem;
+}
+
+/* Carte individuelle */
+.card {
+  background-color: #1e1e2f;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 1rem;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.card img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
+
+/* Titre du livre */
+.card h2 {
+  font-size: 1.2rem;
+  font-family: 'Bebas Neue', cursive, sans-serif;
+  color: #f3ead7;
+  margin: 0.5rem 0 0.2rem;
+}
+
+/* Nom de l’auteur */
+.card p {
+  font-size: 0.9rem;
+  color: #999;
+  margin: 0;
+}
+
+/* Responsive */
+
+@media (max-width: 768px) {
+  #favorisPage {
+    margin-left: 0;
+    padding: 1rem;
+  }
+
+  #favorisPage h1 {
+    font-size: 2.2rem;
+  }
+
+  .grid {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .card {
+    padding: 0.75rem;
+  }
+
+  .back-arrow {
+    left: 10px;
+    top: 10px;
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  #favorisPage h1 {
+    font-size: 2rem;
+  }
+
+  .card h2 {
+    font-size: 1rem;
+  }
+
+  .card p {
+    font-size: 0.8rem;
+  }
+}
